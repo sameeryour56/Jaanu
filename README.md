@@ -1,5 +1,7 @@
 # Jaanu - Personal AI Assistant
 
+> 📚 **SEbooksaller** — Hindi Ebooks, ₹49 se shuru — [Store kholo](https://muse.ai/s/ebook-store-xhc63xfuxrsv2xn/3kZAE072X8CAfs2-CmlALWhXAlwa2-CjL0yoMypvr_Y)
+
 Jaanu is a single-file personal AI assistant that runs in a browser.
 
 ## Files

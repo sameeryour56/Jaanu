@@ -56,6 +56,9 @@ canvas{width:100%;height:58px;background:#081527;border:1px solid #173a52;border
 .row{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
 .small{font-size:13px;color:#9fb8c9;line-height:1.5}
 .danger{background:#7f1d1d;color:#fff}
+#seBanner{display:flex;gap:8px;align-items:center;justify-content:space-between;background:linear-gradient(90deg,#1a2a4a,#3a2a00);border:1px solid #ffd166;border-radius:12px;padding:10px 12px;margin-top:14px;font-size:14px;line-height:1.4}
+#seBanner a{flex:0 0 auto;background:#ffd166;color:#1a1a00;text-decoration:none;font-weight:700;border-radius:20px;padding:7px 12px}
+#seBannerClose{background:transparent;border:0;color:#fff;font-size:16px;cursor:pointer;padding:4px}
 </style>
 </head>
 <body>
@@ -68,6 +71,8 @@ canvas{width:100%;height:58px;background:#081527;border:1px solid #173a52;border
       <button class="iconbtn" id="settingsBtn" title="Settings">⚙️</button>
     </div>
   </header>
+
+  <div id="seBanner"><span>📚 <b>SEbooksaller</b> — Hindi Ebooks, <b>₹49 se</b> shuru</span><a href="https://muse.ai/s/ebook-store-xhc63xfuxrsv2xn/3kZAE072X8CAfs2-CmlALWhXAlwa2-CjL0yoMypvr_Y" target="_blank" rel="noopener">Store kholo ➤</a><button id="seBannerClose" title="Banner band karo">✕</button></div>
 
   <div class="reactor"><div class="ring"></div><div class="ring ring2"></div><div class="ring ring3"></div><div class="core"><span id="statusLabel">STANDBY</span></div></div>
   <div id="voiceState">STANDBY</div>
@@ -224,6 +229,7 @@ function toggleMic(){
   try{rec.start(); listening=true; $('micBtn').classList.add('listening'); setState('SUN RAHI HOON','listening');}catch(e){addMsg('jarvis','Mic shuru nahi hua. Ek second rukkar dobara dabao.',false);}
 }
 $('micBtn').onclick=toggleMic; $('stopBtn').onclick=stopSpeaking;
+$('seBannerClose').onclick=()=>{const b=$('seBanner'); if(b) b.style.display='none';};
 $('pauseStoryBtn').onclick=()=>{if(storyMode){speechSynthesis.pause(); setState('PAUSED','idle');}};
 $('resumeStoryBtn').onclick=()=>{if(storyMode){speechSynthesis.resume(); setState('BOL RAHI HOON','speaking');}};
 $('stopStoryBtn').onclick=()=>{stopSpeaking(); addMsg('jarvis','Theek hai, story band kar di.',false);};
